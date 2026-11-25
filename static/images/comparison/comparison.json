@@ -1,0 +1,316 @@
+{
+ "methods": {
+  "pixelsplat": "pixelSplat",
+  "mvsplat": "MVSplat",
+  "depthsplat": "DepthSplat",
+  "anysplat": "AnySplat",
+  "splatt3r": "Splatt3R",
+  "csg_fusion": "CSG-Fusion"
+ },
+ "rows": [
+  {
+   "id": "P21",
+   "overlap": 0.9,
+   "index": 1747,
+   "scene": "825d228aec",
+   "views": [
+    155,
+    156,
+    393
+   ],
+   "psnr": {
+    "pixelsplat": 19.002439498901367,
+    "mvsplat": 9.081379890441895,
+    "depthsplat": 6.504528522491455,
+    "anysplat": 15.65062141418457,
+    "splatt3r": 19.473974227905273,
+    "csg_fusion": 23.483495712280273
+   }
+  },
+  {
+   "id": "P22",
+   "overlap": 0.9,
+   "index": 2448,
+   "scene": "3db0a1c8f3",
+   "views": [
+    669,
+    5,
+    718
+   ],
+   "psnr": {
+    "pixelsplat": 19.28260612487793,
+    "mvsplat": 16.340620040893555,
+    "depthsplat": 14.386862754821777,
+    "anysplat": 15.45955753326416,
+    "splatt3r": 19.372535705566406,
+    "csg_fusion": 22.504920959472656
+   }
+  },
+  {
+   "id": "P27",
+   "overlap": 0.9,
+   "index": 3154,
+   "scene": "27dd4da69e",
+   "views": [
+    144,
+    151,
+    153
+   ],
+   "psnr": {
+    "pixelsplat": 15.277451515197754,
+    "mvsplat": 15.622881889343262,
+    "depthsplat": 12.731058120727539,
+    "anysplat": 20.903762817382812,
+    "splatt3r": 24.206790924072266,
+    "csg_fusion": 25.659467697143555
+   }
+  },
+  {
+   "id": "P28",
+   "overlap": 0.9,
+   "index": 261,
+   "scene": "fb5a96b1a2",
+   "views": [
+    754,
+    751,
+    744
+   ],
+   "psnr": {
+    "pixelsplat": 24.73986053466797,
+    "mvsplat": 25.20351791381836,
+    "depthsplat": 25.76140594482422,
+    "anysplat": 14.69144058227539,
+    "splatt3r": 22.613006591796875,
+    "csg_fusion": 26.376401901245117
+   }
+  },
+  {
+   "id": "Q2",
+   "overlap": 0.7,
+   "index": 2490,
+   "scene": "286b55a2bf",
+   "views": [
+    1,
+    0,
+    36
+   ],
+   "psnr": {
+    "pixelsplat": 16.34524917602539,
+    "mvsplat": 12.840425491333008,
+    "depthsplat": 12.162426948547363,
+    "anysplat": 17.7056884765625,
+    "splatt3r": 19.67133331298828,
+    "csg_fusion": 25.00305938720703
+   }
+  },
+  {
+   "id": "Q21",
+   "overlap": 0.7,
+   "index": 2736,
+   "scene": "825d228aec",
+   "views": [
+    346,
+    340,
+    550
+   ],
+   "psnr": {
+    "pixelsplat": 10.837136268615723,
+    "mvsplat": 14.22964859008789,
+    "depthsplat": 7.7198262214660645,
+    "anysplat": 20.01531219482422,
+    "splatt3r": 12.816582679748535,
+    "csg_fusion": 23.50175666809082
+   }
+  },
+  {
+   "id": "Q22",
+   "overlap": 0.7,
+   "index": 1738,
+   "scene": "40aec5fffa",
+   "views": [
+    141,
+    114,
+    73
+   ],
+   "psnr": {
+    "pixelsplat": 8.408059120178223,
+    "mvsplat": 8.673853874206543,
+    "depthsplat": 12.105142593383789,
+    "anysplat": 14.057880401611328,
+    "splatt3r": 14.696320533752441,
+    "csg_fusion": 22.09006118774414
+   }
+  },
+  {
+   "id": "Q23",
+   "overlap": 0.7,
+   "index": 420,
+   "scene": "a24f64f7fb",
+   "views": [
+    456,
+    461,
+    115
+   ],
+   "psnr": {
+    "pixelsplat": 20.57081413269043,
+    "mvsplat": 12.647174835205078,
+    "depthsplat": 13.528729438781738,
+    "anysplat": 9.27540397644043,
+    "splatt3r": 19.62863540649414,
+    "csg_fusion": 22.195499420166016
+   }
+  },
+  {
+   "id": "R1",
+   "overlap": 0.5,
+   "index": 1969,
+   "scene": "e398684d27",
+   "views": [
+    5,
+    4,
+    91
+   ],
+   "psnr": {
+    "pixelsplat": 17.943248748779297,
+    "mvsplat": 13.233280181884766,
+    "depthsplat": 14.635204315185547,
+    "anysplat": 16.495773315429688,
+    "splatt3r": 17.689449310302734,
+    "csg_fusion": 25.06024169921875
+   }
+  },
+  {
+   "id": "R21",
+   "overlap": 0.5,
+   "index": 4515,
+   "scene": "27dd4da69e",
+   "views": [
+    81,
+    121,
+    90
+   ],
+   "psnr": {
+    "pixelsplat": 16.69066619873047,
+    "mvsplat": 15.78333854675293,
+    "depthsplat": 14.121369361877441,
+    "anysplat": 16.499223709106445,
+    "splatt3r": 18.644512176513672,
+    "csg_fusion": 25.047216415405273
+   }
+  },
+  {
+   "id": "R22",
+   "overlap": 0.5,
+   "index": 3286,
+   "scene": "bcd2436daf",
+   "views": [
+    80,
+    113,
+    82
+   ],
+   "psnr": {
+    "pixelsplat": 18.878456115722656,
+    "mvsplat": 15.580232620239258,
+    "depthsplat": 18.225324630737305,
+    "anysplat": 18.740867614746094,
+    "splatt3r": 16.226160049438477,
+    "csg_fusion": 22.731515884399414
+   }
+  },
+  {
+   "id": "R23",
+   "overlap": 0.5,
+   "index": 2993,
+   "scene": "f2dc06b1d2",
+   "views": [
+    157,
+    680,
+    334
+   ],
+   "psnr": {
+    "pixelsplat": 16.993032455444336,
+    "mvsplat": 9.839656829833984,
+    "depthsplat": 12.029496192932129,
+    "anysplat": 10.00274658203125,
+    "splatt3r": 17.315465927124023,
+    "csg_fusion": 23.37207794189453
+   }
+  },
+  {
+   "id": "S1",
+   "overlap": 0.3,
+   "index": 463,
+   "scene": "a24f64f7fb",
+   "views": [
+    147,
+    102,
+    207
+   ],
+   "psnr": {
+    "pixelsplat": 19.29714584350586,
+    "mvsplat": 16.714136123657227,
+    "depthsplat": 17.701913833618164,
+    "anysplat": 18.18512535095215,
+    "splatt3r": 16.280134201049805,
+    "csg_fusion": 23.870731353759766
+   }
+  },
+  {
+   "id": "S21",
+   "overlap": 0.3,
+   "index": 2431,
+   "scene": "286b55a2bf",
+   "views": [
+    13,
+    12,
+    23
+   ],
+   "psnr": {
+    "pixelsplat": 14.635802268981934,
+    "mvsplat": 11.502772331237793,
+    "depthsplat": 13.714747428894043,
+    "anysplat": 8.605573654174805,
+    "splatt3r": 22.96772003173828,
+    "csg_fusion": 26.0517578125
+   }
+  },
+  {
+   "id": "S23",
+   "overlap": 0.3,
+   "index": 3384,
+   "scene": "f3d64c30f8",
+   "views": [
+    189,
+    181,
+    193
+   ],
+   "psnr": {
+    "pixelsplat": 17.397817611694336,
+    "mvsplat": 16.511423110961914,
+    "depthsplat": 15.18252182006836,
+    "anysplat": 19.895727157592773,
+    "splatt3r": 17.863601684570312,
+    "csg_fusion": 23.124189376831055
+   }
+  },
+  {
+   "id": "S26",
+   "overlap": 0.3,
+   "index": 4386,
+   "scene": "9071e139d9",
+   "views": [
+    1087,
+    1035,
+    1075
+   ],
+   "psnr": {
+    "pixelsplat": 20.47516632080078,
+    "mvsplat": 22.14037322998047,
+    "depthsplat": 19.66004753112793,
+    "anysplat": 19.163623809814453,
+    "splatt3r": 22.035303115844727,
+    "csg_fusion": 23.90874671936035
+   }
+  }
+ ]
+}

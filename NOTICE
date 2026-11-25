@@ -1,0 +1,5 @@
+CSG-Fusion project page: third-party notices
+
+static/css/bulma.min.css: Bulma 0.9.1, Copyright Jeremy Thomas. License: MIT.
+Layout, static/css/vids.css, static/js/vids.js: the authors' ViDS project page.
+static/images/, static/scenes/: ScanNet++ data, subject to the ScanNet++ terms of use.
