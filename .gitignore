@@ -1,0 +1,46 @@
+# macOS
+._*
+.DS_Store
+__MACOSX/
+
+# Python / build
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+*.so
+*.o
+
+# Weights, data, outputs. No trailing slash on these: the patterns must also match symlinks (worktrees link
+# these folders to the main checkout), which a pattern ending in "/" does not.
+/results
+/checkpoint
+checkpoints
+**/data/scannetpp/coverage
+**/data/scannetpp/coverage/
+wandb/
+lightning_logs/
+outputs/
+demo_out/
+*-[0-9]*.out
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+
+# Large docs
+*.pptx
+
+
+# Local training logs (scripts/train/*.sh)
+logs/
+
+# Local datasets and download tooling (see README "Data preparation")
+/data/scannetpp/raw
+/data/scannetpp/processed
+/data/dtu
+/data/renderpy
+/data/scannetpp_download
+
+# local tool settings
+.claude/

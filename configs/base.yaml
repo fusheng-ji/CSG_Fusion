@@ -1,0 +1,68 @@
+# CSG-Fusion on the MASt3R backbone. Base of every experiment config.
+name: '%Y-%m-%d-%H-%M-%S'
+
+save_dir: './results/${name}/'
+
+# Environment
+seed: 0
+devices: 'auto'
+
+# Loggers
+use_profiler: False
+loggers:
+  use_csv_logger: True
+  use_wandb: False  # local logging: TensorBoard (save_dir/tensorboard) + CSV metrics, config.yaml, git.yaml, output.log
+  use_tensorboard: True
+
+# Model
+use_pretrained: True
+pretrained_mast3r_path: './checkpoint/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric.pth'
+# Data
+data:
+  root: './data/scannetpp'
+  batch_size: 10
+  num_workers: 2
+  resolution: [512, 512]
+  epochs_per_train_epoch: 100 # How many times to sample from each scene each training epoch (helps avoid unnecessary Pytorch Lightning overhead)
+  train_subset_div: 1  # train on a random 1/div of the data
+  train_subset_seed: 42
+
+# Optimization
+opt:
+  epochs: 20
+  lr: 0.00001
+  gradient_clip_val: 0.5
+  params: [encoder, gaussian_head]
+
+loss:
+  mse_loss_weight: 1.0
+  lpips_loss_weight: 0.25
+  mast3r_loss_weight: Null
+  apply_mask: True
+  average_over_mask: True
+  mast3r_active: False  # actually add the MASt3R loss term (ramped, NaN/Inf skipped)
+  context_warmup: True  # 0.3/0.7/1.0 ramp on the context loss
+  resized_metrics: True  # extra 256x256 metrics
+  target_mask_fix: True  # every target view uses its own mask (README "Training fixes"); False reproduces the paper
+
+use_offsets: True
+use_attention: True
+attention_neighbor: 0
+learn_residual: True
+sh_degree: 1
+dist_threshold: 0.03
+context_loss: False
+
+model:
+  backbone: external  # external (MASt3R) | vggt
+  # Fixes for new training runs (README "Training fixes"). main.py DEFAULTS keep them off, so checkpoints saved
+  # without these keys, such as the published model, load with their original behaviour. Set them to False to
+  # reproduce the paper's training.
+  pad_detach_fix: True
+  fusion_mask_transpose_fix: True
+  fusion_skip_unmatched: True
+  filter_union_matches: True
+eval:
+  log_fusion_ratio: True
+trainer:
+  checkpoint_every_epoch: True

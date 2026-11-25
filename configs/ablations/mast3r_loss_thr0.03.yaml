@@ -1,0 +1,8 @@
+# Loss ablation: + MASt3R confidence loss only, threshold 0.03 m (context_mast3r_loss_thr0.03.yaml without the context-view loss).
+include: ['../base.yaml']
+
+name: 'ablations/mast3r_loss_thr0.03/%Y-%m-%d-%H-%M-%S'
+
+loss:
+  mast3r_loss_weight: 0.01
+  mast3r_active: True  # fine-tune the point-cloud heads with the MASt3R confidence loss (paper Sec. 4.3)

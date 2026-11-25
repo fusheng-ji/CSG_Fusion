@@ -1,0 +1,4 @@
+# VGGT ablation: Matching-based Gaussian Filter only, no Mask-based Feature Aggregation.
+include: ['../csg_fusion_vggt.yaml']
+name: 'ablations/vggt_filter_only/%Y-%m-%d-%H-%M-%S'
+use_attention: False

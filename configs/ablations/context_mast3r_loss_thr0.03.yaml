@@ -1,0 +1,9 @@
+# Loss ablation: + context-view loss + MASt3R confidence loss, threshold 0.03 m (csg_fusion.yaml at 0.03 m).
+include: ['../base.yaml']
+
+name: 'ablations/context_mast3r_loss_thr0.03/%Y-%m-%d-%H-%M-%S'
+
+context_loss: True
+loss:
+  mast3r_loss_weight: 0.01
+  mast3r_active: True  # fine-tune the point-cloud heads with the MASt3R confidence loss (paper Sec. 4.3)

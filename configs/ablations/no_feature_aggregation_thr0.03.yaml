@@ -1,0 +1,6 @@
+# Head ablation: no Mask-based Feature Aggregation, threshold 0.03 m (context_mast3r_loss_thr0.03.yaml without it).
+include: ['context_mast3r_loss_thr0.03.yaml']
+
+name: 'ablations/no_feature_aggregation_thr0.03/%Y-%m-%d-%H-%M-%S'
+
+use_attention: False

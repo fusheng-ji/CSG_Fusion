@@ -1,0 +1,64 @@
+CSG-Fusion — third-party notices
+================================
+
+The CSG-Fusion code is licensed under CC BY-NC-SA 4.0 (see LICENSE). It contains or depends on the
+following third-party work, which keeps its own license.
+
+Vendored code (in this repository)
+----------------------------------
+src/mast3r_src/
+    MASt3R, DUSt3R and CroCo, Copyright (c) 2024-present Naver Corporation.
+    License: CC BY-NC-SA 4.0 (src/mast3r_src/LICENSE, src/mast3r_src/NOTICE and the LICENSE / NOTICE files
+    of dust3r/ and dust3r/croco/). Taken from the copy in Splatt3R. Files changed for CSG-Fusion carry a
+    "Modified for CSG-Fusion" comment.
+
+src/pixelsplat_src/
+    Adapted from pixelSplat, Copyright (c) 2023 David Charatan, Sizhe Li, Andrea Tagliasacchi and
+    Vincent Sitzmann. License: MIT (LICENSES/pixelSplat-MIT.txt).
+
+main.py, workspace.py, data/, utils/, src/dpt_gs_head.py, src/csg_gaussian_head.py
+    Parts are derived from Splatt3R (https://github.com/btsmart/splatt3r) by Brandon Smart, Chuanxia Zheng,
+    Iro Laina and Victor Adrian Prisacariu. License: CC BY-NC 4.0.
+
+src/dpt_gs_head.py, src/matching_filter.py, src/fast_matching.py, src/backbone_graph.py
+    Parts follow or re-implement DUSt3R / MASt3R code (dpt_head.py, fast_nn.py, model.py), Copyright (c) 2024-present
+    Naver Corporation. License: CC BY-NC-SA 4.0.
+
+data/dtu.py, utils/geometry.py (build_covariance)
+    Parts are derived from pixelSplat. License: MIT (LICENSES/pixelSplat-MIT.txt).
+
+utils/geometry.py (quaternion_to_matrix), scripts/eval/baselines/spfsplat.py (one function)
+    From PyTorch3D, Copyright (c) Meta Platforms, Inc. and affiliates. License: BSD 3-Clause
+    (LICENSES/PyTorch3D-BSD-3-Clause.txt).
+
+utils/sh_utils.py
+    From PlenOctree, Copyright 2021 The PlenOctree Authors. License: BSD 2-Clause (see the header of the file).
+
+data/scannetpp/prepare_processed.py (qvec2rotmat)
+    From COLMAP's Python scripts. License: BSD 3-Clause (LICENSES/COLMAP-BSD-3-Clause.txt).
+
+data/dtu_index/evaluation_index_dtu_nctx2.json
+    Evaluation index from MVSplat (https://github.com/donydchen/mvsplat). License: MIT (LICENSES/MVSplat-MIT.txt).
+
+data/scannetpp/test_set_*.json, assets/
+    Frame lists and images of ScanNet++ scenes, subject to the ScanNet++ terms of use.
+
+Submodules (third_party/, not part of this repository's code)
+--------------------------------------------------------------
+third_party/diff-gaussian-rasterization
+    Gaussian rasterizer derived from gaussian-splatting by Inria and MPII: Gaussian-Splatting License,
+    non-commercial research and evaluation use only (see its LICENSE.md). Required to render.
+third_party/vggt
+    VGGT by Meta Platforms: VGGT License (see its LICENSE.txt). Only for the optional VGGT backbone.
+third_party/baselines/*
+    Unmodified upstream repositories of the evaluated baselines, each under its own license.
+
+Model weights
+-------------
+The released CSG-Fusion checkpoint (csg_fusion.ckpt) is fine-tuned from the MASt3R checkpoint
+MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric and is subject to its terms
+(src/mast3r_src/CHECKPOINTS_NOTICE), which include the licenses of the datasets MASt3R was trained on.
+It was trained on ScanNet++; check the ScanNet++ terms of use for your use case. Non-commercial use only.
+
+The released csg_fusion_vggt.ckpt contains the weights of facebook/VGGT-1B (CC BY-NC 4.0) and is subject to its terms and
+the VGGT License. It was trained on ScanNet++; check the ScanNet++ terms of use for your use case. Non-commercial use only.

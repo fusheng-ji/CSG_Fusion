@@ -1,0 +1,44 @@
+# CSG-Fusion environment (Linux, NVIDIA GPU, CUDA 12.1).
+#   conda env create -f environment.yml && conda activate csg_fusion
+#   bash scripts/install_rasterizers.sh          # CUDA Gaussian rasterizer (+ RoPE kernels)
+name: csg_fusion
+channels:
+  - nvidia/label/cuda-12.1.1
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - cuda-toolkit=12.1.1        # nvcc + headers to build the rasterizers / RoPE kernels
+  - gxx_linux-64=11            # host compiler supported by CUDA 12.1
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      # Deep learning
+      - torch==2.5.1
+      - torchvision==0.20.1
+      - lightning==2.4.0
+      - torchmetrics==1.4.0.post0
+      - lpips==0.1.4
+      - einops==0.8.0
+      - jaxtyping==0.2.33
+      # Config / logging
+      - omegaconf==2.3.0
+      - gitpython==3.1.43
+      - wandb==0.16.6
+      - tensorboard==2.17.1  # newer releases need protobuf >= 6; wandb 0.16 needs < 5
+      - setuptools<81               # tensorboard 2.17 imports pkg_resources
+      - protobuf>=3.19,<5
+      - tqdm==4.66.4
+      # Scientific / IO
+      - numpy==1.26.4
+      - scipy==1.14.0
+      - scikit-image==0.20.0
+      - scikit-learn==1.5.1
+      - opencv-python==4.10.0.84
+      - pillow==9.5.0
+      - matplotlib==3.9.2
+      - trimesh==4.4.3
+      - plyfile==1.0.3
+      - imageio==2.38.2
+      - imageio-ffmpeg==0.5.1     # demo fly-through video
+      - huggingface-hub==0.25.2    # VGGT weights (from_pretrained), checkpoint download (hf_hub_download)
+      - safetensors==0.8.0         # VGGT weights (model.safetensors)

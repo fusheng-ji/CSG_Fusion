@@ -1,0 +1,11 @@
+# CSG-Fusion, the published model (MASt3R backbone): filter threshold 0.07 m, context-view loss and
+# MASt3R confidence loss on top of configs/base.yaml. With the training fixes of base.yaml; README "Training" says how to train as in the paper.
+include: ['base.yaml']
+
+name: 'csg_fusion/%Y-%m-%d-%H-%M-%S'
+
+dist_threshold: 0.07
+context_loss: True
+loss:
+  mast3r_loss_weight: 0.01
+  mast3r_active: True  # fine-tune the point-cloud heads with the MASt3R confidence loss (paper Sec. 4.3)

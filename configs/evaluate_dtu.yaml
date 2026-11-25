@@ -1,0 +1,25 @@
+# CSG-Fusion on DTU (scripts/eval/evaluation_dtu.py). Every key can be overridden on the command line,
+# e.g. model.weights_path=<ckpt> evaluation.save_dir=<dir>.
+name: 'dtu_evaluation_%Y-%m-%d-%H-%M-%S'
+
+save_dir: './results/dtu_evaluation/${name}/'
+
+# Environment
+seed: 42
+devices: 1
+
+# Model
+model:
+  weights_path: 'checkpoint/csg_fusion.ckpt'  # the published model; override with model.weights_path=<ckpt>
+
+# Data
+data:
+  root: './data/dtu/'
+  batch_size: 1
+  num_workers: 0
+  index_json: "./data/dtu/test/index.json"
+  evaluation_index_path: "./data/dtu_index/evaluation_index_dtu_nctx2.json"
+# Evaluation (full image, no mask)
+evaluation:
+  save_dir: './results/dtu_evaluation/${name}/'
+  save_renders: true  # renders and a .ply (up to about 36 MB) per sample

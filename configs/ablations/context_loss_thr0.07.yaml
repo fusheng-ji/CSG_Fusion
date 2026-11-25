@@ -1,0 +1,7 @@
+# Loss ablation: + context-view loss, threshold 0.07 m (csg_fusion.yaml without the MASt3R loss).
+include: ['../base.yaml']
+
+name: 'ablations/context_loss_thr0.07/%Y-%m-%d-%H-%M-%S'
+
+dist_threshold: 0.07
+context_loss: True

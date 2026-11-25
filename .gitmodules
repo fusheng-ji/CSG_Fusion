@@ -1,0 +1,33 @@
+[submodule "third_party/diff-gaussian-rasterization"]
+	path = third_party/diff-gaussian-rasterization
+	url = https://github.com/fusheng-ji/diff-gaussian-rasterization.git
+[submodule "third_party/baselines/pixelsplat"]
+	path = third_party/baselines/pixelsplat
+	url = https://github.com/dcharatan/pixelsplat.git
+[submodule "third_party/baselines/mvsplat"]
+	path = third_party/baselines/mvsplat
+	url = https://github.com/donydchen/mvsplat.git
+[submodule "third_party/baselines/NoPoSplat"]
+	path = third_party/baselines/NoPoSplat
+	url = https://github.com/cvg/NoPoSplat.git
+[submodule "third_party/baselines/splatt3r"]
+	path = third_party/baselines/splatt3r
+	url = https://github.com/btsmart/splatt3r.git
+[submodule "third_party/baselines/depthsplat"]
+	path = third_party/baselines/depthsplat
+	url = https://github.com/cvg/depthsplat.git
+[submodule "third_party/baselines/SPFSplat"]
+	path = third_party/baselines/SPFSplat
+	url = https://github.com/ranrhuang/SPFSplat.git
+[submodule "third_party/baselines/SPFSplatV2"]
+	path = third_party/baselines/SPFSplatV2
+	url = https://github.com/ranrhuang/SPFSplatV2.git
+[submodule "third_party/baselines/YoNoSplat"]
+	path = third_party/baselines/YoNoSplat
+	url = https://github.com/cvg/YoNoSplat.git
+[submodule "third_party/baselines/AnySplat"]
+	path = third_party/baselines/AnySplat
+	url = https://github.com/Sage-PhysicalAI/AnySplat.git
+[submodule "third_party/vggt"]
+	path = third_party/vggt
+	url = https://github.com/facebookresearch/vggt.git

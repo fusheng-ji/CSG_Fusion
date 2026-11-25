@@ -1,0 +1,6 @@
+# Filter threshold sweep: dist_threshold 0.05 m (base recipe, no context / MASt3R loss).
+include: ['../base.yaml']
+
+name: 'ablations/dist_threshold_0.05/%Y-%m-%d-%H-%M-%S'
+
+dist_threshold: 0.05

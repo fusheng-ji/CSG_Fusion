@@ -1,0 +1,41 @@
+# CSG-Fusion
+
+> CSG-Fusion (ICCV 2025 Workshops, E2E3D, Best Paper Award) is a feed-forward 3D Gaussian Splatting model for sparse-view novel view synthesis. From two RGB images with no camera poses and no intrinsics it predicts, in one forward pass, a single metric-scale set of 3D Gaussians. It builds on MASt3R / Splatt3R and removes the duplicated Gaussians of the overlapping views with a Matching-based Gaussian Filter (MASt3R correspondences + 3D distance threshold) and a Mask-based Feature Aggregation (masked cross-view attention). Code: CC BY-NC-SA 4.0, non-commercial.
+
+Key facts:
+- Task: two-view, pose-free, feed-forward 3D Gaussian Splatting / novel view synthesis.
+- Input: two RGB images of a static scene, centre-cropped and resized to 512x512. No poses, no intrinsics.
+- Output: metric-scale 3D Gaussians in the camera frame of image 1; exportable as a standard 3DGS .ply file.
+- Backbone: frozen MASt3R ViT-L encoder/decoder (published model); optional frozen VGGT-1B backbone (csg_fusion_vggt.ckpt).
+- Training data: ScanNet++ v1 (DSLR). Evaluation: ScanNet++ at view overlaps 0.9/0.7/0.5/0.3, and DTU.
+- Metrics: PSNR, SSIM, LPIPS (AlexNet) on masked renders resized to 256x256.
+- Result: +1.1 to +2.5 dB PSNR over Splatt3R on ScanNet++ at every overlap, with fewer Gaussians.
+- Multi-view: src/multiview.py runs the trained model on 2-8 images without retraining (pairs chained over a spanning tree, or one joint VGGT pass); with 8 views its filter removes 35% of the Gaussians (MASt3R, pairwise / all) and full-image PSNR is 2.9 to 3.2 dB (MASt3R) or 2.1 to 2.6 dB (VGGT) above two views.
+- Project page: https://fusheng-ji.github.io/CSG_Fusion/ (3D viewer, comparisons with nine baselines, efficiency)
+- Code: https://github.com/fusheng-ji/CSG_Fusion
+- Weights: https://huggingface.co/fushengji/CSG-Fusion (csg_fusion.ckpt; csg_fusion_vggt.ckpt for the VGGT backbone), downloaded automatically by demo.py.
+- Paper: https://openaccess.thecvf.com/content/ICCV2025W/E2E3D/papers/Xia_CSG-Fusion_Consistent_Sparse-View_Gaussian_Splatting_via_Matching-based_Fusion_ICCVW_2025_paper.pdf (DOI 10.1109/ICCVW69036.2025.00276)
+- Authors: Yan Xia, Wenbo Ji (equal contribution), Weirong Chen, Daniel Cremers (USTC, TUM, MCML).
+
+## Run
+
+- [README](README.md): installation, quick start, data preparation, training, evaluation, results, FAQ
+- [demo.py](demo.py): `python demo.py --image1 a.jpg --image2 b.jpg --out demo_out/` writes gaussians.ply, re-renders and a fly-through video
+- [Training](scripts/train/train.sh): `bash scripts/train/train.sh configs/csg_fusion.yaml`
+- [Evaluation harness](scripts/eval/baselines/__main__.py): `bash scripts/eval/eval_baselines.sh csg_fusion` (same protocol for CSG-Fusion and 9 baselines)
+
+## Code
+
+- [main.py](main.py): CSGFusion LightningModule (forward, losses, training/test loops) and load_model
+- [src/fast_matching.py](src/fast_matching.py): Matching-based Gaussian Filter (paper Sec. 4.1); src/matching_filter.py for the VGGT backbone
+- [src/feature_aggregation.py](src/feature_aggregation.py): Mask-based Feature Aggregation, FeatureFusion (paper Sec. 4.2)
+- [src/csg_gaussian_head.py](src/csg_gaussian_head.py): CSG-Fusion Gaussian head (filter + aggregation + Gaussian DPT heads)
+- [src/vggt_backbone.py](src/vggt_backbone.py): VGGT-1B backbone variant
+- [src/fusion_plugin.py](src/fusion_plugin.py): training-free fusion for other two-view Gaussian splatting models
+- [utils/export.py](utils/export.py): .ply export of the fused Gaussians
+- [configs/](configs/): base.yaml, csg_fusion.yaml (published recipe), csg_fusion_vggt.yaml, ablations/
+
+## Optional
+
+- [CITATION.cff](CITATION.cff): citation metadata
+- [NOTICE](NOTICE), [LICENSES/](LICENSES/): third-party code and weight licenses

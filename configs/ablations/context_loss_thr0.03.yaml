@@ -1,0 +1,6 @@
+# Loss ablation: + context-view loss, threshold 0.03 m.
+include: ['../base.yaml']
+
+name: 'ablations/context_loss_thr0.03/%Y-%m-%d-%H-%M-%S'
+
+context_loss: True

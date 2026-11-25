@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use CSG-Fusion in your research, please cite the paper below."
+title: "CSG-Fusion: Consistent Sparse-View Gaussian Splatting via Matching-based Fusion"
+type: software
+license: CC-BY-NC-SA-4.0
+repository-code: "https://github.com/fusheng-ji/CSG_Fusion"
+url: "https://openaccess.thecvf.com/content/ICCV2025W/E2E3D/papers/Xia_CSG-Fusion_Consistent_Sparse-View_Gaussian_Splatting_via_Matching-based_Fusion_ICCVW_2025_paper.pdf"
+keywords:
+  - 3D Gaussian Splatting
+  - feed-forward Gaussian splatting
+  - sparse-view novel view synthesis
+  - pose-free 3D reconstruction
+  - two-view reconstruction
+  - MASt3R
+  - Splatt3R
+  - ScanNet++
+authors:
+  - family-names: Xia
+    given-names: Yan
+  - family-names: Ji
+    given-names: Wenbo
+  - family-names: Chen
+    given-names: Weirong
+  - family-names: Cremers
+    given-names: Daniel
+preferred-citation:
+  type: conference-paper
+  title: "CSG-Fusion: Consistent Sparse-View Gaussian Splatting via Matching-based Fusion"
+  authors:
+    - family-names: Xia
+      given-names: Yan
+    - family-names: Ji
+      given-names: Wenbo
+    - family-names: Chen
+      given-names: Weirong
+    - family-names: Cremers
+      given-names: Daniel
+  collection-title: "Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops"
+  conference:
+    name: "ICCV 2025 Workshop on End-to-End 3D Learning (E2E3D)"
+  month: 10
+  year: 2025
+  start: 2653
+  end: 2662
+  doi: "10.1109/ICCVW69036.2025.00276"

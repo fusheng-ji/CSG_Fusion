@@ -1,0 +1,19 @@
+# CSG-Fusion on a VGGT backbone (src/vggt_backbone.py): the csg_fusion.yaml recipe with the
+# frozen MASt3R replaced by a frozen VGGT-1B aggregator. Ablations: ablations/vggt_no_fusion.yaml,
+# ablations/vggt_filter_only.yaml.
+include: ['base.yaml']
+
+name: 'csg_fusion_vggt/%Y-%m-%d-%H-%M-%S'
+
+use_pretrained: False            # VGGT-1B weights come from facebook/VGGT-1B (model.vggt_pretrained)
+dist_threshold: 0.07
+context_loss: True
+loss:
+  mast3r_loss_weight: 0.01       # ConfLoss(Regr3D) on the VGGT point head: makes its points metric
+  mast3r_active: True
+model:
+  backbone: vggt
+  vggt_pretrained: facebook/VGGT-1B
+  vggt_init_log_scale: 0.8       # global scale of VGGT's normalised points (learned; init = median log(GT / VGGT depth))
+  vggt_bf16: True                # frozen aggregator / track features in bf16
+  # the five training fixes come from base.yaml (README "Training fixes")

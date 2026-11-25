@@ -1,0 +1,5 @@
+# VGGT ablation: no filter, no feature aggregation (plain per-pixel Gaussians from both views).
+include: ['../csg_fusion_vggt.yaml']
+name: 'ablations/vggt_no_fusion/%Y-%m-%d-%H-%M-%S'
+dist_threshold: 0.0
+use_attention: False
